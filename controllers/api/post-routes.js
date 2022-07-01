@@ -4,7 +4,7 @@ const {User, Post} = require('../../models');
 // get all posts, including the user that submitted them
 router.get('/', (req, res) => {
    Post.findAll({
-      attributes:['id', 'title','content','created_at'],
+      attributes:['id', 'title','content','created_at', 'updated_at'],
       include:{
          model:User,
          attributes:['id', 'username']
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
       where:{
          id:req.params.id
       },
-      attributes:['id', 'title','content','created_at'],
+      attributes:['id', 'title','content','created_at', 'updated_at'],
       include: {
          model:User,
          attributes:['id','username']
@@ -41,6 +41,26 @@ router.get('/:id', (req, res) => {
    .catch(err => {
       console.log(err);
       res.status(400).json(err);
+   });
+});
+
+// update posts using post id
+router.put('/:id', (req, res) => {
+   Post.update(req.body, {
+      where:{
+         id: req.params.id
+      },
+   })
+   .then(dbPostData => {
+      if (!dbPostData) {
+         res.status(400).json({message: 'No post with this id was found'});
+         return;
+      }
+      res.json(dbPostData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
    });
 });
 
