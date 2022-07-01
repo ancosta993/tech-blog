@@ -14,7 +14,38 @@ router.get('/', (req, res) => {
             attributes:['id','title','content','created_at'],
             include:{
                model:User,
-               attributes:['user_id','username']
+               attributes:['id','username']
+            }
+         }
+      ]
+   })
+   .then(dbCommentData => {
+      res.json(dbCommentData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+});
+
+// get one comment
+router.get('/:id', (req, res) => {
+   Comment.findOne({
+      where:{
+         id:req.params.id
+      },
+      attributes:['id','comment_text','created_at'],
+      include:[
+         {
+            model:User,
+            attributes:['username']
+         },
+         {
+            model: Post,
+            attributes:['id','title','content','created_at'],
+            include:{
+               model:User,
+               attributes:['id','username']
             }
          }
       ]
