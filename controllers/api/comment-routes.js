@@ -51,6 +51,10 @@ router.get('/:id', (req, res) => {
       ]
    })
    .then(dbCommentData => {
+      if(!dbCommentData){
+         res.status(400).json({message: "no comment with this id was found"});
+         return;
+      }
       res.json(dbCommentData);
    })
    .catch(err => {
@@ -58,6 +62,7 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
    });
 });
+
 
 // create comment
 router.post('/', (req, res) => {
