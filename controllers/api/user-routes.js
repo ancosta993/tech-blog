@@ -4,7 +4,11 @@ const {User, Post} = require('../../models');
 // get all users
 router.get('/', (req, res) => {
    User.findAll({
-      attributes: {exclude:['password']}
+      attributes: {exclude:['password']},
+      include:{
+         model: Post,
+         attributes:['id', 'title','content','created_at']
+      }
    })
    .then(dbUserData => {
       res.json(dbUserData);
@@ -21,7 +25,11 @@ router.get('/:id', (req, res) => {
       where:{
          id: req.params.id
       },
-      attributes: { exclude: ['password']}
+      attributes: { exclude: ['password']},
+      include:{
+         model: Post,
+         attributes:['id', 'title','content','created_at']
+      }
    })
    .then(dbUserData => {
       if(!dbUserData){
