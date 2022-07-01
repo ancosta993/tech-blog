@@ -24,6 +24,10 @@ router.get('/:id', (req, res) => {
       attributes: { exclude: ['password']}
    })
    .then(dbUserData => {
+      if(!dbUserData){
+         res.status(400).json({message: "No user was found with this id"});
+         return;
+      }
       res.json(dbUserData);
    })
    .catch(err => {
@@ -47,5 +51,25 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
    });
 });
+
+// update a username for a user
+router.put('/:id', (req, res) => {
+   User.update(req.body, {
+      where:{
+         id: req.params.id
+      }
+   })
+   .then(dbUserData => {
+      if(!dbUserData){
+         res.status(400).json({message: "No User with this id was found"});
+         return;
+      }
+      res.json(dbUserData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   })
+})
 
 module.exports = router;
