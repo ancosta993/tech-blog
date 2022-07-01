@@ -15,6 +15,23 @@ router.get('/', (req, res) => {
    });
 });
 
+// get one user
+router.get('/:id', (req, res) => {
+   User.findOne({
+      where:{
+         id: req.params.id
+      },
+      attributes: { exclude: ['password']}
+   })
+   .then(dbUserData => {
+      res.json(dbUserData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+});
+
 // create a user
 router.post('/', (req, res) => {
    User.create({
