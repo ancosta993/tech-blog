@@ -10,10 +10,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.store) //imp
 
 // make an instance of the session storage
 const sess = {
-  secret: 'Super secret',
-  cookies:{},
-  resave:false,
-  saveUninitialized:true,
+  secret: 'Super secret secret',
+  cookies: {},
+  resave: false,
+  saveUnitialized: true,
   store: new SequelizeStore({
     db: sequelize
   })
@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // serve the public fol
 app.use(express.json()); // convert incoming req to JSON format
 app.use(express.urlencoded({extended: true}));// parse objects
 app.use(routes); // turn on all the routes.
+app.use(session(sess)); // turn on the session.
 
 
 // initiate the port
