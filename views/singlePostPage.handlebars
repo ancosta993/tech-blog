@@ -1,0 +1,18 @@
+
+<div>
+   <h3>{{title}}</h3>
+   <p>
+      {{content}}
+   </p>
+   <div>
+      posted by {{user.username}} on {{created_at}}
+   </div>
+   <ul>
+      {{#each comments}}
+      <li>
+         {{this.comment_text}}
+      </li>
+      {{/each}}
+   </ul>
+</div>
+
