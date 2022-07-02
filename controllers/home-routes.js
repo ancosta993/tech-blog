@@ -1,0 +1,20 @@
+const router = require('express').Router();
+const {User, Post, Comment} = require('../models');
+
+
+router.get('/', (req, res) => {
+   Post.findAll({
+      attributes:['id','title','content','created_at'],
+      include:{
+         model:User,
+         attribute:['username']
+      }
+   })
+   .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({plain:true}));
+      res.render('homepage', {posts});
+   })
+   
+});
+
+module.exports = router;
