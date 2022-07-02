@@ -59,5 +59,8 @@ router.get('/user/signup', (req, res) => {
    res.render('signup');
 })
 
-
+// log in users
+router.get('/user/login', (req, res) => {
+   res.render('login');
+})
 module.exports = router;
