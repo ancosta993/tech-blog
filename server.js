@@ -15,7 +15,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // use express middlwears
-app.use(express.static(path.join(__dirname, 'path'))); // serve the public folder
+app.use(express.static(path.join(__dirname, 'public'))); // serve the public folder
 app.use(express.json()); // convert incoming req to JSON format
 app.use(express.urlencoded({extended: true}));// parse objects
 app.use(routes); // turn on all the routes.
