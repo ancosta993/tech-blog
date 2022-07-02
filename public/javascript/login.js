@@ -14,7 +14,7 @@ async function logInFormHandler(event) {
          headers:{'Content-Type': 'application/json'}
       });
       if (response.ok){
-         alert('Logged in!');
+         document.location.replace('/dashboard');
       } else {
          alert(response.statusText);
       }

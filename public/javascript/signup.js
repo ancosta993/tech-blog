@@ -19,7 +19,7 @@ async function signUpFormHandler(event) {
          }
       })
       if (response.ok){
-         alert('User created');
+         document.location.replace('/');
       } else {
          alert(response.statusText);
       }

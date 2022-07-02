@@ -56,11 +56,20 @@ router.get('/posts/:id', (req, res) => {
 
 // sign up users (create user for the database)
 router.get('/user/signup', (req, res) => {
+   if(req.session.loggedIn){
+      res.redirect('/');
+      return;
+   }
    res.render('signup');
 })
 
 // log in users
 router.get('/user/login', (req, res) => {
-   res.render('login');
-})
+   if(req.session.loggedIn){
+      res.redirect('/');
+      return;
+   }
+   res.render('login', {loggedIn: req.session.loggedIn});
+});
+
 module.exports = router;
