@@ -5,6 +5,19 @@ const path = require('path');
 const routes = require('./controllers/');//import all the routes
 const exhbs = require('express-handlebars'); // import express handlebars and set it to exhbs
 const hbs = exhbs.create({}) // create an instance of exhbs and set it to hbs
+const session = require('express-session') // import express-session
+const SequelizeStore = require('connect-session-sequelize')(session.store) //import classes to store user sessions.
+
+// make an instance of the session storage
+const sess = {
+  secret: 'Super secret',
+  cookies:{},
+  resave:false,
+  saveUninitialized:true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
 // declare necessary variables
 const app = express();
