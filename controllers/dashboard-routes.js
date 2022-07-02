@@ -1,29 +1,28 @@
 const router = require('express').Router();
 const {User, Post, Comment} = require('../models');
 
-router.get('/:id', (req, res)=>{
-   User.findOne({
+router.get('/:user_id', (req, res) => {
+   Post.findAll({
       where:{
-         id:req.params.id
+         user_id:req.params.user_id
       },
-      attributes:['id','username'],
+      attributes:['id','title','content','created_at'],
       include:{
-         model:Post,
-         attributes:['id', 'title','content','created_at'],
+         model:Comment,
+         attributes:['id', 'comment_text','created_at'],
          include:{
-            model: Comment,
-            attributes: ['comment_text', 'created_at'],
-            include:{
-               model: User,
-               attributes:['username']
-            }
+            model:User,
+            attributes:['username']
          }
       }
    })
-      .then(dbUserData => {
-         
-      })
-   
-});
+   .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({plain:true}));
+      res.render('dashboard',{posts});
+   })
+   .catch(err => {
+      res.status(500).json(err);
+   });
+})
 
 module.exports = router;
