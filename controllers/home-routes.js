@@ -54,6 +54,10 @@ router.get('/posts/:id', (req, res) => {
    })
 });
 
+// sign up users (create user for the database)
+router.get('/user/signup', (req, res) => {
+   res.render('signup');
+})
 
 
 module.exports = router;
