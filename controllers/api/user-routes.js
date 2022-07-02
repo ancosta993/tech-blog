@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const {User, Post} = require('../../models');
+const {User, Post, Comment} = require('../../models');
+const sequelize = require('../../config/connection');
 
 // get all users
 router.get('/', (req, res) => {
@@ -49,9 +50,9 @@ router.post('/', (req, res) => {
    })
    .then(dbUserData => {
       req.session.save(() => {
-         req.session.user_id = dbUserData.id,
-         req.session.username = dbUserData.username,
-         req.session.loggedIn = true,
+         req.session.user_id = dbUserData.id;
+         req.session.username = dbUserData.username;
+         req.session.loggedIn = true;
 
          res.send(dbUserData);
       });
@@ -81,9 +82,9 @@ router.post('/login', (req, res) => {
       }
      
       req.session.save(()=>{
-         req.session.user_id = dbUserData.id,
-         req.session.username = dbUserData.username,
-         req.session.loggedIn = true,
+         req.session.user_id = dbUserData.id;
+         req.session.username = dbUserData.username;
+         req.session.loggedIn = true;
 
          res.json({ user: dbUserData, message: 'You are now logged in!' });
       });

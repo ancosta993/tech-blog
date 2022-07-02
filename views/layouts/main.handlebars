@@ -10,8 +10,13 @@
    <header>
       <h1>Welcome!</h1>
       <nav>
+         {{#if loggedIn}}
+         <a href="/dashboard">Dashboard</a>
+         <a href="/userlogout">logout</a>
+         {{else}}
          <a href="/user/signup">Sign Up</a>
          <a href="/user/login">Log In</a>
+         {{/if}}
       </nav>
    </header>
 

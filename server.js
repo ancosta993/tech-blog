@@ -6,7 +6,7 @@ const routes = require('./controllers/');//import all the routes
 const exhbs = require('express-handlebars'); // import express handlebars and set it to exhbs
 const hbs = exhbs.create({}) // create an instance of exhbs and set it to hbs
 const session = require('express-session') // import express-session
-const SequelizeStore = require('connect-session-sequelize')(session.store) //import classes to store user sessions.
+const SequelizeStore = require('connect-session-sequelize')(session.Store); //import classes to store user sessions.
 
 // make an instance of the session storage
 const sess = {
@@ -31,8 +31,9 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public'))); // serve the public folder
 app.use(express.json()); // convert incoming req to JSON format
 app.use(express.urlencoded({extended: true}));// parse objects
-app.use(routes); // turn on all the routes.
 app.use(session(sess)); // turn on the session.
+app.use(routes); // turn on all the routes.
+
 
 
 // initiate the port
