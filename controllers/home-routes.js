@@ -50,6 +50,7 @@ router.get('/posts/:id', (req, res) => {
    })
    .then(dbPostData => {
       const post = dbPostData.get({plain: true})
+      post.loggedIn = req.session.loggedIn;
       res.render('singlePostPage', post);
    })
 });
@@ -69,7 +70,7 @@ router.get('/user/login', (req, res) => {
       res.redirect('/');
       return;
    }
-   res.render('login', {loggedIn: req.session.loggedIn});
+   res.render('login');
 });
 
 module.exports = router;
