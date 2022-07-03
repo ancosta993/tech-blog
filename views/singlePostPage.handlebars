@@ -10,12 +10,15 @@
       Posted by <span>{{post.user.username}}</span> on {{format_date post.created_at}}
    </div>
    
-   <h4>Comments:</h4>
+   <h4 class="comments-title">Comments:</h4>
 
-   <ul>
+   <ul class="comments-group">
       {{#each post.comments}}
-      <li>
-         {{this.comment_text}} --Posted by {{this.user.username}} on {{this.created_at}}
+      <li class="comment">
+         {{this.comment_text}} 
+         <div class="meta">
+            --Posted by {{this.user.username}} on {{format_date this.created_at}}
+         </div>
       </li>
       {{/each}}
    </ul>

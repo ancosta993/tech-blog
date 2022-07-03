@@ -104,6 +104,20 @@ main{
    color: rgba(238, 225, 225, 0.975);
 }
 
+/* single post comment section */
+.comments-title{
+   color:blue;
+   font-size: 1.2rem;
+}
+
+.comments-group li:nth-child(even){
+   background: rgb(162, 162, 184);
+}
+
+.comment{
+   padding:1rem;
+   border-radius:1rem;
+}
 
 /* breakpoints */
 @media screen and (max-width: 705px){
