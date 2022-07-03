@@ -23,6 +23,10 @@ router.get('/', (req, res) => {
    .catch(err => {
       res.status(500).json(err);
    });
+});
+
+router.get('/new-blog', (req, res) => {
+   res.render('addBlog', {loggedIn: req.session.loggedIn});
 })
 
 module.exports = router;
