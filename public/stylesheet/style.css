@@ -154,6 +154,32 @@ main{
    margin-left:2rem;
 }
 
+/* add post page */
+.blog-form{
+   margin:3rem;
+}
+
+.blog-form > div{
+   color: blue;
+   font-weight: bolder;
+   font-size:1.3rem;
+   margin-bottom:1.5rem;
+}
+
+/* edit post page */
+.edit-post-form{
+   margin:3rem;
+}
+.edit-post-form > div{
+   color: blue;
+   font-weight: bolder;
+   font-size:1.3rem;
+   margin-bottom:1.5rem;
+}
+.delete-btn{
+   background-color: red;
+}
+
 /* breakpoints */
 @media screen and (max-width: 705px){
    header {
