@@ -1,7 +1,7 @@
 <ol>
    {{#each posts}}
    <li>
-      <h3>{{this.title}}</h3>
+      <h3><a href='/posts/{{this.id}}'>{{this.title}}</a></h3>
       <div>
          posted by {{this.user.username}} on {{this.created_at}} with <a href='/posts/{{this.id}}'>{{this.comments.length}} comment(s)</a>
       </div>
