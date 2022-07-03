@@ -27,6 +27,17 @@ li {
    padding: .75rem .0 .75rem 0;
 }
 
+/* utilitis */
+.submit-btn{
+   background: darkblue;
+   border-radius: 1rem;
+   color: rgba(238, 225, 225, 0.975);
+   padding:.5rem;
+   cursor: pointer;
+   font-size:1.2rem;
+   margin-top:1rem;
+}
+
 /* header content */
 header {
    background-color: blue;
@@ -93,6 +104,7 @@ main{
    font-size: 1.5rem;
    background-color: rgb(162, 162, 184);
    padding:.5rem;
+   color:rgba(238, 225, 225, 0.975);
 }
 .post > .sp-title{
    margin-bottom: 0;
@@ -115,8 +127,25 @@ main{
 }
 
 .comment{
+   width:fit-content;
    padding:1rem;
    border-radius:1rem;
+}
+
+/* single post comment form */
+.comment-form{
+   margin-top:3rem;
+}
+
+.comment-form > div > label{
+   color:blue;
+   font-size: 1.2rem;
+   font-weight: bolder;
+}
+
+.comment-form > div > textarea{
+   border-radius: 1rem;
+   width: 70%;
 }
 
 /* breakpoints */
