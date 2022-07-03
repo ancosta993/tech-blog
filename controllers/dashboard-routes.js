@@ -27,6 +27,10 @@ router.get('/', (req, res) => {
 
 router.get('/new-blog', (req, res) => {
    res.render('addPost', {loggedIn: req.session.loggedIn});
+});
+
+router.get('/edit-post/:id', (req, res) => {
+   res.render('edit-post', {loggedIn: req.session.loggedIn});
 })
 
 module.exports = router;
