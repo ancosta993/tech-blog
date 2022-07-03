@@ -1,16 +1,16 @@
 <div>
-   <h3>{{title}}</h3>
+   <h3>{{post.title}}</h3>
    <p>
-      {{content}}
+      {{post.content}}
    </p>
    <div>
-      posted by {{user.username}} on {{created_at}}
+      posted by {{post.user.username}} on {{post.created_at}}
    </div>
    
    <h4>Comments:</h4>
 
    <ul>
-      {{#each comments}}
+      {{#each post.comments}}
       <li>
          {{this.comment_text}} --Posted by {{this.user.username}} on {{this.created_at}}
       </li>
