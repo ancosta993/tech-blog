@@ -3,7 +3,7 @@
    <li class="post">
       <h3 class="post-title"><a href='/posts/{{this.id}}'>{{this.title}}</a></h3>
       <div class="meta">
-         posted by <span>{{this.user.username}}</span> on {{this.created_at}} with <a href='/posts/{{this.id}}'>{{this.comments.length}} comment(s)</a>
+         posted by <span>{{this.user.username}}</span> on {{format_date this.created_at}} | <a href='/posts/{{this.id}}'>{{this.comments.length}} {{format_plural 'comment' this.comments.length}}</a>
       </div>
    </li>
    {{/each}}
