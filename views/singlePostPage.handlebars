@@ -7,15 +7,18 @@
    <div>
       posted by {{user.username}} on {{created_at}}
    </div>
+   
+   <h4>Comments:</h4>
+
    <ul>
       {{#each comments}}
       <li>
-         {{this.comment_text}}
+         {{this.comment_text}} --Posted by {{this.user.username}} on {{this.created_at}}
       </li>
       {{/each}}
    </ul>
 </div>
-
+{{#if loggedIn}}
 <section>
    <form class="comment-form">
       <div>
@@ -28,4 +31,4 @@
    </form>
 </section>
 <script src="/javascript/comment.js"></script>
-
+{{/if}}
