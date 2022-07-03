@@ -104,4 +104,23 @@ router.post('/', (req, res) => {
    });
 });
 
+// delete post
+router.delete('/:id', (req, res) => {
+   Post.destroy({
+      where:{
+         id: req.params.id
+      }
+   })
+   .then(dbPostData => {
+      if(!dbPostData){
+         res.status(400).json({message: 'No post with this id was found'});
+         return;
+      } 
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+})
+
 module.exports =  router;
