@@ -1,10 +1,13 @@
 <div>
-   <h3>{{post.title}}</h3>
-   <p>
+   <article class="post sp-post-wrapper">
+      <h3 class="sp sp-title">{{post.title}}</h3>
+      <p class="sp sp-content">
       {{post.content}}
    </p>
-   <div>
-      posted by {{post.user.username}} on {{post.created_at}}
+   </article>
+
+   <div class="sp meta">
+      Posted by <span>{{post.user.username}}</span> on {{format_date post.created_at}}
    </div>
    
    <h4>Comments:</h4>

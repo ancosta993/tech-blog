@@ -82,6 +82,27 @@ main{
    font-size: larger;
 }
 
+/* single post page classes sp stands for single post */
+.sp{
+   margin:1rem auto 1rem auto;
+}
+
+.sp-content{
+   margin-top:0;
+   line-height: 1.5;
+   font-size: 1.5rem;
+   background-color: rgb(162, 162, 184);
+   padding:.5rem;
+}
+.post > .sp-title{
+   margin-bottom: 0;
+   font-size: 2rem;
+   background: darkblue;
+   padding:1rem;
+   border-top-right-radius:1rem;
+   border-top-left-radius:1rem;
+   color: rgba(238, 225, 225, 0.975);
+}
 
 
 /* breakpoints */
