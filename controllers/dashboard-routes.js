@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new-blog', (req, res) => {
-   res.render('addBlog', {loggedIn: req.session.loggedIn});
+   res.render('addPost', {loggedIn: req.session.loggedIn});
 })
 
 module.exports = router;
