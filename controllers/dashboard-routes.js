@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const {User, Post, Comment} = require('../models');
 
 router.get('/', (req, res) => {
@@ -30,7 +31,17 @@ router.get('/new-blog', (req, res) => {
 });
 
 router.get('/edit-post/:id', (req, res) => {
-   res.render('edit-post', {loggedIn: req.session.loggedIn});
-})
+   Post.findOne({
+      where:{
+         id:req.params.id
+      },
+      attributes:['id','title','content']
+   })
+      .then(dbPostData => {
+         const post = dbPostData.get({plain: true});
+         post.loggedIn = req.session.loggedIn;
+         res.render('edit-post', post);
+      });
+});
 
 module.exports = router;
