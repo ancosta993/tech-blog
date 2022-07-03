@@ -1,17 +1,22 @@
-<div>
-   <a href="/dashboard/new-blog">New Blog</a>
-</div>
+
 <ol>
    {{#each posts}}
    <li>
-      <h3><a href="/dashboard/edit-post/{{this.id}}">{{this.title}}</a></h3>
-      <p>
+      <article class="post">
+      <h3 class="sp sp-title"><a href="/dashboard/edit-post/{{this.id}}">{{this.title}}</a></h3>
+      <p class="sp sp-content">
          {{this.content}}
       </p>
-      <div>
-         Posted on {{this.created_at}} | <a href='/posts/{{this.id}}'>{{this.comments.length}} comment(s)</a>
+      </article>
+      <div class="meta">
+         Posted on {{format_date this.created_at}}
       </div>
    </li>
    {{/each}}
 </ol>
+
+<div class="add-post-btn">
+   <a class="submit-btn" href="/dashboard/new-blog"> &#43; Add Post</a>
+</div>
+
 

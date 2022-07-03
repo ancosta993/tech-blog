@@ -148,6 +148,12 @@ main{
    width: 70%;
 }
 
+/* dashboard */
+.add-post-btn{
+   margin-top:2rem;
+   margin-left:2rem;
+}
+
 /* breakpoints */
 @media screen and (max-width: 705px){
    header {
