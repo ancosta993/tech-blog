@@ -3,9 +3,14 @@
    margin:0;
 }
 
+body {
+   background: rgba(238, 225, 225, 0.975);
+}
+
 /* canceling styles */
 a {
    text-decoration: none;
+   color:inherit;
 }
 
 button{
@@ -17,6 +22,12 @@ button{
    cursor: pointer;
 }
 
+li {
+   list-style-type: none;
+   padding: .75rem .0 .75rem 0;
+}
+
+/* header content */
 header {
    background-color: blue;
    padding-top:1.5rem;
@@ -45,12 +56,35 @@ nav > * {
    color: rgba(238, 225, 225, 0.975);
 }
 
+/* main content */
 main{
-   width:70%;
-   margin:auto;
-   margin-top:3rem;
+   width: 100%;
+   padding-left: 15%;
+   padding-right: 10%;
+   margin-top: 0rem;
+   background-color: rgba(238, 225, 225, 0.975);
 }
 
+.post > h3 {
+   color:blue;
+   font-size: 1.4rem;
+}
+
+.meta {
+   background-color: lightyellow;
+   width: fit-content;
+   padding: 0 1rem 0 1rem;
+   border-radius: 1rem;
+}
+
+.meta span {
+   color: blue;
+   font-size: larger;
+}
+
+
+
+/* breakpoints */
 @media screen and (max-width: 705px){
    header {
       text-align: center;
