@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User, Post, Comment} = require('../../models');
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -42,7 +43,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a user
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
    User.create({
       username: req.body.username,
       email:req.body.email,
@@ -104,7 +105,7 @@ router.post('/logout', (req, res) => {
  });
 
 // update a username for a user
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
    User.update(req.body, {
       individualHooks: true,
       where:{
