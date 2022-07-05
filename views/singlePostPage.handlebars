@@ -16,7 +16,7 @@
       {{#each post.comments}}
       <li class="comment">
          {{this.comment_text}} 
-         <div class="meta">
+         <div class="meta comment-meta">
             --Posted by {{this.user.username}} on {{format_date this.created_at}}
          </div>
       </li>

@@ -101,25 +101,29 @@ main{
 .sp-content{
    margin-top:0;
    line-height: 1.5;
-   font-size: 1.5rem;
+   font-size: 1.2rem;
    background-color: rgb(162, 162, 184);
-   padding:.5rem;
-   color:rgba(238, 225, 225, 0.975);
+   padding:.5rem 2rem .5rem;
+   color:rgba(238, 225, 225, 1);
+   border: solid darkblue;
 }
 .post > .sp-title{
    margin-bottom: 0;
-   font-size: 2rem;
+   font-size: 1.5rem;
    background: darkblue;
-   padding:1rem;
-   border-top-right-radius:1rem;
-   border-top-left-radius:1rem;
+   padding: 1rem 2rem 1rem;
+   border-top-right-radius: 1rem;
+   border-top-left-radius: 1rem;
    color: rgba(238, 225, 225, 0.975);
 }
 
 /* single post comment section */
 .comments-title{
-   color:blue;
-   font-size: 1.2rem;
+   color: blue;
+   font-size: 1.5rem;
+   margin-top: 4rem;
+   margin-left: 10rem;
+   text-decoration: underline;
 }
 
 .comments-group li:nth-child(even){
@@ -130,6 +134,10 @@ main{
    width:fit-content;
    padding:1rem;
    border-radius:1rem;
+}
+
+.comment-meta {
+   margin-top: 0.5rem;
 }
 
 /* single post comment form */
@@ -178,6 +186,12 @@ main{
 }
 .delete-btn{
    background-color: red;
+}
+
+.edit-post-title{
+   color:blue;
+   font-size:3rem;
+   text-align: center;
 }
 
 /* breakpoints */
