@@ -194,6 +194,44 @@ main{
    text-align: center;
 }
 
+/* Login form style */
+.login-form-wrapper{
+   display:flex;
+   align-content:center;
+   height:60vh;
+}
+.login-form{
+   margin: auto;
+   background: lightyellow;
+   padding: 1.5rem;
+   border-radius: 5px;
+   border: solid darkblue;
+   color: darkblue;
+   font-weight: 700;
+}
+
+.login-form > div {
+   margin:2rem;
+}
+
+.login-form > div > label{
+   display:block;
+   font-size:1.2rem;
+}
+
+.login-form > div > input{
+   height: 2rem;
+   width: 30rem;
+   border-radius:5px;
+   border:solid darkblue;
+   border-width: 2px;
+}
+
+.login-form > button {
+   display:block;
+   margin:auto;
+}
+
 /* breakpoints */
 @media screen and (max-width: 705px){
    header {
