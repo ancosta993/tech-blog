@@ -249,6 +249,11 @@ main{
    margin-top:0;
 }
 
+/* edit post style */
+.form > button {
+   margin-bottom:1rem;
+}
+
 /* breakpoints */
 @media screen and (max-width: 705px){
    header {
