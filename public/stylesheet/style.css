@@ -227,9 +227,26 @@ main{
    border-width: 2px;
 }
 
+
 .form > button {
    display:block;
    margin:auto;
+}
+
+/* add post style */
+.form > div > textarea{
+   border-radius: 5px;
+   border: solid darkblue;
+   border-width: 2px;
+   width: 54rem;
+   height: 15rem;
+}
+
+.form > .blog-content-wrapper{
+   margin-bottom:0;
+}
+.form > .add-content-field{
+   margin-top:0;
 }
 
 /* breakpoints */
