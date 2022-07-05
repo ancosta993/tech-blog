@@ -195,12 +195,12 @@ main{
 }
 
 /* Login form style */
-.login-form-wrapper{
+.form-wrapper{
    display:flex;
    align-content:center;
    height:60vh;
 }
-.login-form{
+.form{
    margin: auto;
    background: lightyellow;
    padding: 1.5rem;
@@ -210,16 +210,16 @@ main{
    font-weight: 700;
 }
 
-.login-form > div {
+.form > div {
    margin:2rem;
 }
 
-.login-form > div > label{
+.form > div > label{
    display:block;
    font-size:1.2rem;
 }
 
-.login-form > div > input{
+.form > div > input{
    height: 2rem;
    width: 30rem;
    border-radius:5px;
@@ -227,7 +227,7 @@ main{
    border-width: 2px;
 }
 
-.login-form > button {
+.form > button {
    display:block;
    margin:auto;
 }
