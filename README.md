@@ -1,7 +1,7 @@
 # Tech Blog Website
 
 ## Project Description 
-This is blogger website for blogs related to Web technologies. Unregistered users can see the posts created by the registered users. It shows the date the post was created, the user that posted the post and any comments left by registered users. An user can register by creating an account. The user can then use their credentials to log into the site. Once logged in, the users can create new post, add comments to other posts or their posts, edit or delete their created posts. 
+This is a blogger website for blogs related to Web technologies. Unregistered users can see the posts created by the registered users. It shows the date the post was created, the user that posted the post and any comments left by registered users. An user can register by creating an account. The user can then use their credentials to log into the site. Once logged in, the users can create new post, add comments to other posts or their posts, edit or delete their created posts. 
 
 ## Table of Contents
 - **[Project Description](#project-description)**  
@@ -19,4 +19,12 @@ The back-end and front-end parts of the application used different tech tools.
   - express.js (for serving the site and handling browser requests)
   - dotenv.js (used for sensitive information used)
   - mysql2 (used along with Sequqlize ORM to qeury MySQL database)
+  - Handlebars (template engine, used for producing HTML pages for the site)
 - __Frontend portion tools:__
+  - CSS for adding style to the HTML pages created through handlebars.
+  - Javascript for browser environment logic.
+
+## Using the Site
+The site can be visited through [this link]().  
+Once the link is cliked, the user is presented with the homepage:  
+[homepage](./finished-images/homepate.PNG)
