@@ -57,4 +57,5 @@ The website color combination and design is too generic. The site can be made mo
 - Fade in Animation in drag.
 - Giving users option to choose between night and day mode.
 - Link elements enlarging animation on hover in the navigation.
-- 
+- Giving 3D effects such as box shadows to the form elements.
+- Replace the default font size when inputting on text boxex.
