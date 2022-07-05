@@ -27,4 +27,6 @@ The back-end and front-end parts of the application used different tech tools.
 ## Using the Site
 The site can be visited through [this link]().  
 Once the link is cliked, the user is presented with the homepage:  
-[homepage](./finished-images/homepate.PNG)
+![homepage](./finished-images/homepage.PNG)  
+The hompage contains the navigation link that can route the user to different pages contained in the site. Furthermore, the current blogs' titles are listed for the user. The user, registered or unregistered,  can click on any of the titles and they will be routed to a page with the content of that blog. It is shown in the following image:  
+![singlePagePost](./finished-images/singlepost.PNG)
