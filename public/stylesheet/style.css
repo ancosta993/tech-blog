@@ -198,8 +198,10 @@ main{
 .form-wrapper{
    display:flex;
    align-content:center;
+   justify-content: center;
    height:60vh;
 }
+
 .form{
    margin: auto;
    background: lightyellow;
@@ -233,6 +235,12 @@ main{
    margin:auto;
 }
 
+.login-form-signup-link {
+
+   text-align: center;
+   display: block;
+}
+
 /* add post style */
 .form > div > textarea{
    border-radius: 5px;
@@ -254,7 +262,18 @@ main{
    margin-bottom:1rem;
 }
 
+
 /* breakpoints */
+/* for sign up page  */
+@media screen and (max-width: 569px) {
+   .signup-form {
+      padding-left: calc(100vw - 2rem);
+      padding-right: calc(100vw - 1.5rem);
+  };
+  
+}
+
+/* for homepage */
 @media screen and (max-width: 705px){
    header {
       text-align: center;
