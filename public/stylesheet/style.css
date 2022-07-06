@@ -236,7 +236,6 @@ main{
 }
 
 .login-form-signup-link {
-
    text-align: center;
    display: block;
 }
@@ -264,6 +263,8 @@ main{
 
 
 /* breakpoints */
+
+
 /* for sign up page  */
 @media screen and (max-width: 569px) {
    .signup-form {
@@ -282,4 +283,16 @@ main{
    header > h1 {
       width:100%;
    }
+}
+
+/* for add post page */
+@media screen and (max-width: 920px){
+   .form > .add-content-field {
+      width: 100vw;
+   }
+}
+
+/* for edit post page */
+@media screen and (max-width: 920px){
+   
 }
