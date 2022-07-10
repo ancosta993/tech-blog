@@ -24,15 +24,17 @@ const sess = {
 const app = express();
 PORT = process.env.PORT || 3001;
 
-// use middlewears to set the view engine
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
 
 // use express middlwears
 app.use(express.static(path.join(__dirname, 'public'))); // serve the public folder
 app.use(express.json()); // convert incoming req to JSON format
 app.use(express.urlencoded({extended: true}));// parse objects
+// use middlewears to set the view engine
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 app.use(session(sess)); // turn on the session.
+
 app.use(routes); // turn on all the routes.
 
 
